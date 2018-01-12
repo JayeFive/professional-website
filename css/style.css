@@ -6,21 +6,17 @@ body {
 .splash-page {
   margin: 0;
   width: 100%;
-  height: 500px;
+  height: 450px;
   font-family: courier, monospace;
   background-image: radial-gradient(at 35%, #fdfdfd 20%, #ccc 100%);
 }
 
 /* navbar sits vertically along the right side */
 .vert-navbar {
-  position: relative;
+  
+  position: fixed;
   right: 18px;
   float: right;
-  padding-top: 30px;
-}
-
-nav ul li {
-  list-style: none;
   color: #333;
   font-size: 1.2em;
   font-weight: bold;
@@ -28,6 +24,23 @@ nav ul li {
   text-shadow: 0px 0px 0.5px #aaa;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  z-index: 10;
+}
+
+.navlinks {
+  margin-top: 10px;
+  width: 9.5rem;
+  background-color: rgba(170, 170, 170, 0.6);
+  border-style: solid;
+  border-radius: 5px;
+
+}
+
+nav ul li{
+  list-style: none;
+}
+
+nav ul li a {
 }
 
 nav ul li::before {
@@ -47,29 +60,56 @@ nav ul li a:visited {
   text-shadow: 0px;
 }
 
+/* Hi, I'm Johnny */
 .title-heading h1 {
   margin: auto;
-  padding: 150px 0px 0px 25px;
-  text-align: center;
+  padding: 150px 0px 0px 54px;
+  text-align: left;
   font-family: courier;
   font-size: 6em;
+  letter-spacing: -0.5px;
   color: #333;
   text-shadow: 0px 0px 2px #aaa;
 }
 
+/* Responsive word wraps for title heading */
+@media screen and (max-width: 870px) {
+  .title-heading h1 {
+    padding-top: 115px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .title-heading h1 {
+    padding-top: 70px;
+  }
+  
+  #splash-box {
+    width: 370px;
+  }
+}
 
 
-
-/* Hi, I'm Johnny */
-
-
-.projects {
+/* Projects section */
+.skills {
   margin: 0px;
   width: 100%;
-  height: 350px;
+  height: 570px;
   box-shadow: inset 0 -10px 6px -10px #fff,
               inset 0  10px 6px -10px #fff;
-  background-color: #01a9db;
+  background-image: url("../img/projects-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top;
+  background-color: white; 
+  z-index: 5;
+}
+
+/* Responsive flip from projects-background.jpg to white background */
+@media screen and (max-width: 640px) {
+  .skills {
+    background-image: none;
+  }
 }
 
 #splash-box {
@@ -78,6 +118,55 @@ nav ul li a:visited {
   margin: 0px auto 10px auto;
   position: relative;
   top: -40px;
-  background-color: black;
+  border-style: solid;
+  border-width: 4px;
+  border-color: #333;
+  border-radius: 13px;
+  background-color: rgba(220, 220, 220, 0.6);
+}
+
+#splash-box p {
+  color: #444;
+  font-family: Helvetica, sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-style: oblique;
+  padding: 35px 20px 0px 20px;
+}
+
+#splash-box span {
+  font-style: normal;
+}
+
+@media screen and (max-width: 550px) {
+  #splash-box {
+    width: 420px;
+    height: 300px;
+  }
+}
+
+/* Native CSS grid for logo links */
+.contact-links {
+  margin: -10px 0px 0px 20px;
+  padding-left: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+  grid-auto-rows: minmax(100px, auto);
+}
+
+.github {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.linkedin {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.email {
+  grid-column: 3;
+  grid-row: 1;
 }
 
