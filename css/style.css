@@ -1,5 +1,6 @@
+
 body {
-  margin: 0;
+  margin: 0px 0px 40px 0px;
 }
 
 
@@ -36,14 +37,24 @@ body {
 
 }
 
-nav ul li{
+/* Both header and footer ul */
+nav ul li {
   list-style: none;
 }
 
 nav ul li a {
+  color: #333;
+  text-shadow: 0px 0px 0.5px #aaa;
+  text-decoration: none;
 }
 
-nav ul li::before {
+nav ul li a:visited {
+  color: #555;
+  text-shadow: 0px;
+}
+
+/* Custom list bullets */
+.header-links ul li::before {
   content: '\25A0';
   display: inline;
   position: relative;
@@ -51,13 +62,7 @@ nav ul li::before {
   max-height: 0;
   left: 20px;
   font-size: 12px;
-  color: #333;
-  text-shadow: 0px 0px 0.5px #aaa;
-}
 
-nav ul li a:visited {
-  color: #555;
-  text-shadow: 0px;
 }
 
 /* Hi, I'm Johnny */
@@ -105,7 +110,8 @@ nav ul li a:visited {
   height: 570px;
   box-shadow: inset 0 -10px 6px -10px #fff,
               inset 0  10px 6px -10px #fff;
-  background-image: url("../img/projects-background.jpg");
+  /*background-image: url("../img/projects-background.jpg");*/
+  background-image: url("../img/skills-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -130,7 +136,7 @@ nav ul li a:visited {
   border-width: 4px;
   border-color: #333;
   border-radius: 13px;
-  background-color: rgba(220, 220, 220, 0.9);
+  background-color: rgba(320, 320, 320, 0.9);
 }
 
 #splash-box p {
@@ -190,4 +196,36 @@ nav ul li a:visited {
   position: relative;
   margin: 0px auto;
   max-width: 700px;
+}
+
+.projects {
+  width: 100%;
+  height: 500px;
+  font-family: courier, monospace;
+  background-image: radial-gradient(at 50%, #fff 20%, #f3f3f3 100%);
+}
+
+
+
+.footer {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(200, 200, 200, 0.9);
+}
+
+.footer > nav {
+  margin-left: -30px;
+  margin-top: -5px;
+}
+
+.footer-links > li {
+  display: inline-block;
+  margin: 0px 12px;
+  font-family: courier, monospace;
+  color: #333;
+  letter-spacing: -0.1em;
 }
