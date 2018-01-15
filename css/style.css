@@ -211,13 +211,15 @@ nav a {
   background-image: radial-gradient(at 50%, #fff 20%, #efefef 100%);
 }
 
+/* Animated project preview box (thumb-holder):
+ * This will work with multiple boxes with the addition of a new column 
+ */
 .thumb-holder {
   position: relative;
   top: 75px;
   width: 400px;
   height: 269px;
   margin: 0px auto;
-  background-image: url("../img/pizza-project-thumb.png");
   border-style: solid;
   border-width: 4px;
   border-color: #333;
@@ -226,30 +228,48 @@ nav a {
                     0px 0px 30px 0px #aaa;
   transition: transform .2s ease-out;
 }
-
-.thumb-holder:hover {
-  transform:scale(1.1);
-  background-color: rgba(50, 50, 50, 0.6);
+  
+.thumb-holder img {
+  border-radius: 11px;
 }
-
+ 
 .overlay {
-  position: relative;
-}
-
-.overlay:after {
   position: absolute;
   content: "";
   top: 0;
-  left: 0;
+  left: 0px;
   width: 100%;
   height: 100%;
-  background-color: #333;
-  opacity: 0.0;
+  background-color: rgba(50, 50, 50, 0.7);
   transition: all .2s;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .2s, visibility .2s;
 }
 
-.overlay:hover:after {
-  opacity: 0.9;
+/* Inner overlay text */
+.overlay p {
+  margin-left: 15px;
+  font-family: courier, monospace;
+  color: white;
+  text-shadow: 1px 1px 2px #000;
+  text-indent: 20px;
+}
+
+
+.overlay a:visited {
+  color: #ddd;
+}
+
+.thumb-holder:hover {
+  transform:scale(1.1);
+  background-color: rgba(50, 50, 50, 0.9);
+}
+
+
+.thumb-holder:hover .overlay {
+  visibility: visible;
+  opacity: 1;
 }
 
 
