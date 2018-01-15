@@ -1,9 +1,9 @@
-
+/* 40px bottom margin to allow room for sticky footer */
 body {
   margin: 0px 0px 40px 0px;
 }
 
-
+/* Front splash page with font style */
 .splash-page {
   margin: 0;
   width: 100%;
@@ -12,49 +12,53 @@ body {
   background-image: radial-gradient(at 35%, #fdfdfd 20%, #ccc 100%);
 }
 
-/* navbar sits vertically along the right side */
-.vert-navbar {
-  
-  position: fixed;
-  right: 18px;
-  float: right;
-  color: #333;
-  font-size: 1.2em;
-  font-weight: bold;
-  margin-right: 20px;
-  text-shadow: 0px 0px 0.5px #aaa;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  z-index: 10;
-}
-
-.navlinks {
-  margin-top: 10px;
-  width: 9.5rem;
-  background-color: rgba(170, 170, 170, 0.6);
-  border-style: solid;
-  border-radius: 5px;
-
-}
-
-/* Both header and footer ul */
-nav ul li {
+/* Both header and footer ul and a links */
+nav ul {
   list-style: none;
 }
 
-nav ul li a {
+nav a {
   color: #333;
   text-shadow: 0px 0px 0.5px #aaa;
   text-decoration: none;
 }
 
-.header-links ul li a:visited {
+/* navbar sits vertically along the right side */
+.vert-navbar {
+  position: fixed;
+  right: 18px;
+  float: right;
+  width: 8rem;
+  height: 3.8em;
+  margin: 10px 35px 0px 0px;
+  color: #333;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-shadow: 0px 0px 0.5px #aaa;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-top: 10px;
+  background-color: rgba(170, 170, 170, 0.6);
+  border-style: solid;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+
+.header-links {
+  position: absolute;
+  left: 5px;
+  bottom: -16px;
+  margin: 0px auto;
+}
+
+.header-links a:visited {
   color: #555;
   text-shadow: 0px;
 }
 
 /* Custom list bullets */
-.header-links ul li::before {
+.header-links li::before {
   content: '\25A0';
   display: inline;
   position: relative;
@@ -67,10 +71,11 @@ nav ul li a {
 
 /* Hi, I'm Johnny */
 .title-heading h1 {
-  margin: auto;
-  padding: 150px 0px 0px 54px;
+  position: relative;
+  margin: 0;
+  top: 165px;
+  left: 55px;
   text-align: left;
-  font-family: courier;
   font-size: 6em;
   letter-spacing: -0.5px;
   color: #333;
@@ -80,37 +85,37 @@ nav ul li a {
 /* Responsive word wraps for title heading */
 @media screen and (min-width: 931px) {
   .title-heading {
-    padding-left: 60px;
+    top: 60px;
   }
 }
 
 @media screen and (max-width: 870px) {
   .title-heading h1 {
-    padding-top: 115px;
+    top: 115px;
   }
 }
 
 @media screen and (max-width: 470px) {
   .title-heading h1 {
-    padding-top: 70px;
+    top: 70px;
+    left: 25px;
   }
   
-  #splash-box {
+  #messege-box {
     width: 370px;
   }
 }
 
 
-/* Projects section */
+/* Skills section */
 .skills {
-  color: #333;
-  text-shadow: 0px 0px 2px #aaa;
   margin: 0px;
   width: 100%;
   height: 570px;
+  color: #333;
+  text-shadow: 0px 0px 2px #aaa;
   box-shadow: inset 0 -10px 6px -10px #fff,
               inset 0  10px 6px -10px #fff;
-  /*background-image: url("../img/projects-background.jpg");*/
   background-image: url("../img/skills-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -126,12 +131,12 @@ nav ul li a {
   }
 }
 
-#splash-box {
+#messege-box {
   width: 500px;
   height: 250px;
   margin: 0px auto 10px auto;
   position: relative;
-  top: -40px;
+  bottom: 40px;
   border-style: solid;
   border-width: 4px;
   border-color: #333;
@@ -139,7 +144,7 @@ nav ul li a {
   background-color: rgba(320, 320, 320, 0.9);
 }
 
-#splash-box p {
+#messege-box p {
   color: #444;
   font-family: Helvetica, sans-serif;
   font-size: 1.2em;
@@ -150,12 +155,12 @@ nav ul li a {
   padding: 20px 20px 0px 20px;
 }
 
-#splash-box span {
+#messege-box span {
   font-style: normal;
 }
 
 @media screen and (max-width: 550px) {
-  #splash-box {
+  #messege-box {
     width: 420px;
     height: 300px;
   }
@@ -198,6 +203,7 @@ nav ul li a {
   max-width: 700px;
 }
 
+/* Projects section */
 .projects {
   width: 100%;
   height: 400px;
@@ -244,7 +250,6 @@ nav ul li a {
 
 .overlay:hover:after {
   opacity: 0.9;
-  
 }
 
 
@@ -265,12 +270,15 @@ nav ul li a {
   margin-top: -5px;
 }
 
-.footer-links > li {
+.footer-links li {
   display: inline-block;
   margin: 0px 12px;
   font-family: courier, monospace;
-  color: #ddd;
   letter-spacing: -0.1em;
+}
+
+.footer-links a {
+  color: #ddd;
 }
 
 .footer-links > li:visited {
